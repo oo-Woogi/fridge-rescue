@@ -13,6 +13,7 @@ import FoodEditPage from "./pages/FoodEditPage";
 import FoodListPage from "./pages/FoodListPage";
 import StatsPage from "./pages/StatsPage";
 import NotificationsPage from "./pages/NotificationsPage";
+import NotificationSettingsPage from "./pages/NotificationSettingsPage";
 import SettingsPage from "./pages/SettingsPage";
 import SettingsProfilePage from "./pages/SettingsProfilePage";
 import FaqPage from "./pages/FaqPage";
@@ -38,6 +39,7 @@ export default function App() {
               <Route path="/foods/:foodId/edit" element={<Private><FoodEditPage /></Private>} />
               <Route path="/stats" element={<Private><StatsPage /></Private>} />
               <Route path="/notifications" element={<Private><NotificationsPage /></Private>} />
+              <Route path="/notifications/settings" element={<Private><NotificationSettingsPage /></Private>} />
               <Route path="/settings" element={<Private><SettingsPage /></Private>} />
               <Route path="/settings/profile" element={<Private><SettingsProfilePage /></Private>} />
               <Route path="/settings/faq" element={<FaqPage />} />

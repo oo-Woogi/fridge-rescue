@@ -96,26 +96,3 @@
   font-size: var(--font-size-xs);
   color: var(--color-text-secondary);
 }
-
-.noti-settings {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
-
-.noti-settings__title {
-  margin: 0;
-  font-size: var(--font-size-md);
-  font-weight: 800;
-  color: var(--color-text-secondary);
-}
-
-.noti-settings__row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--color-surface);
-  border-radius: var(--radius-md);
-  padding: var(--space-4);
-  font-size: var(--font-size-sm);
-}

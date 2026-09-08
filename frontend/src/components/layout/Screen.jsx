@@ -9,7 +9,7 @@ export function TabScreen({ children, title, contentClassName = "" }) {
   return (
     <>
       <LogoHeader title={title} onBellClick={() => navigate("/notifications")} />
-      <main className={`screen__content ${contentClassName}`}>{children}</main>
+      <main className={`screen__content screen__content--with-nav ${contentClassName}`}>{children}</main>
       <BottomNav />
     </>
   );
@@ -23,7 +23,7 @@ export function BackWithTabsScreen({ title, children, contentClassName = "" }) {
   return (
     <>
       <TitleHeader title={title} />
-      <main className={`screen__content ${contentClassName}`}>{children}</main>
+      <main className={`screen__content screen__content--with-nav ${contentClassName}`}>{children}</main>
       <BottomNav />
     </>
   );

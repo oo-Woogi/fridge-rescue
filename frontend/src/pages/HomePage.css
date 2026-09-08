@@ -1,16 +1,61 @@
 .home-hero {
   display: flex;
-  align-items: flex-start;
+  align-items: center; /* 텍스트 영역과 마스코트 영역의 높이 균형을 맞춰 아래쪽 빈 여백이 생기지 않게 함 */
   justify-content: space-between;
+  gap: var(--space-3);
   padding-top: var(--space-2);
 }
 
-.home-hero__greeting {
-  margin: 0;
-  font-size: var(--font-size-lg);
+.home-hero__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  flex: 1;
+  min-width: 0; /* 고정 62% 대신 마스코트 영역을 제외한 나머지 폭을 그대로 사용 */
+}
+
+/* 홈화면 수정.PNG 참고: 은은한 배경의 캡슐형 날짜 칩 + 달력 아이콘, 요일은 강조색 */
+.home-date-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-pill);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
   font-weight: 700;
-  line-height: 1.4;
-  max-width: 60%;
+  color: var(--color-text-primary);
+}
+
+.home-date-chip__icon {
+  font-size: var(--font-size-sm);
+}
+
+.home-date-chip__weekday {
+  color: var(--color-primary);
+}
+
+/* "오늘도 냉장고를 / 구조해볼까요?" 2줄 굵은 제목. "구조" 두 글자만 강조색(.home-hero__heading-accent) */
+.home-hero__heading {
+  margin: 0;
+  font-size: var(--font-size-xxl);
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--color-text-primary);
+}
+
+.home-hero__heading-accent {
+  color: var(--color-primary);
+}
+
+/* 큰 제목 바로 아래의 작은 설명 문구. 통계 탭 부제(.stats-hero__subtitle)와 동일한 톤 */
+.home-hero__tagline {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
 }
 
 .home-hero__mascot-wrap {
@@ -18,11 +63,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-shrink: 0; /* 마스코트가 커져도 항상 제 크기를 유지하고, intro가 나머지 폭을 채움 */
 }
 
 .home-hero__bubble {
-  background: var(--color-primary-light);
-  color: var(--color-primary-dark);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  color: var(--color-text-primary);
   font-size: var(--font-size-xs);
   font-weight: 700;
   padding: var(--space-2) var(--space-3);
@@ -32,7 +79,8 @@
 }
 
 .home-hero__mascot {
-  width: 90px;
+  /* 말풍선/텍스트와 겹치지 않는 선에서 한 단계 더 확대 */
+  width: 132px;
   height: auto;
 }
 

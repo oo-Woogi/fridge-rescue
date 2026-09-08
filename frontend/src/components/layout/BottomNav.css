@@ -1,6 +1,10 @@
 .bottom-nav {
-  position: sticky;
+  position: fixed;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--viewport-width);
   display: flex;
   background: var(--color-surface);
   border-top: 1px solid var(--color-border);

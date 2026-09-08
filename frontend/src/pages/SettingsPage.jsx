@@ -75,7 +75,7 @@ export default function SettingsPage() {
         <h2 className="settings-group__title">사용자 설정</h2>
         <div className="settings-menu">
           <MenuRow label="닉네임 수정" value={user?.nickname} onClick={() => navigate("/settings/profile")} />
-          <MenuRow label="알림 설정" onClick={() => navigate("/notifications")} />
+          <MenuRow label="알림 설정" onClick={() => navigate("/notifications/settings")} />
         </div>
       </section>
 

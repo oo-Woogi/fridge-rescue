@@ -1,7 +1,9 @@
 .fab {
-  position: sticky;
-  bottom: calc(var(--space-5) + env(safe-area-inset-bottom));
-  left: calc(100% - 72px);
+  position: fixed;
+  bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + var(--space-4));
+  /* 모바일 프레임(최대 393px, 가운데 정렬)과 무관하게 항상 프레임 우하단에 고정 */
+  left: 50%;
+  transform: translateX(calc(min(50vw, calc(var(--viewport-width) / 2)) - 48px));
   width: 56px;
   height: 56px;
   border-radius: 50%;

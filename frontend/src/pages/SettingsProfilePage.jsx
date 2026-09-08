@@ -65,21 +65,23 @@ export default function SettingsProfilePage() {
             value={currentPassword}
             onChange={(e) => setCurrentPassword(e.target.value)}
           />
-          <div>
+          <div className="settings-profile__new-password-group">
+            <div>
+              <TextField
+                type="password"
+                placeholder="새 비밀번호를 입력하세요"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+              />
+              <p className="field-hint">영문, 숫자 포함 8자 이상 입력하세요</p>
+            </div>
             <TextField
               type="password"
-              placeholder="새 비밀번호를 입력하세요"
-              value={newPassword}
-              onChange={(e) => setNewPassword(e.target.value)}
+              placeholder="새 비밀번호를 다시 입력하세요"
+              value={newPasswordConfirm}
+              onChange={(e) => setNewPasswordConfirm(e.target.value)}
             />
-            <p className="field-hint">영문, 숫자 포함 8자 이상 입력하세요</p>
           </div>
-          <TextField
-            type="password"
-            placeholder="새 비밀번호를 다시 입력하세요"
-            value={newPasswordConfirm}
-            onChange={(e) => setNewPasswordConfirm(e.target.value)}
-          />
         </div>
 
         {error && <p className="settings-profile__error">{error}</p>}

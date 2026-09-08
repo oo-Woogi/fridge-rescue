@@ -12,9 +12,13 @@ import "./HomePage.css";
 
 const WEEKDAY_KO = ["일", "월", "화", "수", "목", "금", "토"];
 
-function greetingDate() {
+// "9월 8일" / "화" 형태로 접속 시점의 오늘 날짜를 계산한다(하드코딩 아님).
+function todayDisplay() {
   const now = new Date();
-  return `${now.getMonth() + 1}/${now.getDate()} ${WEEKDAY_KO[now.getDay()]}`;
+  return {
+    monthDay: `${now.getMonth() + 1}월 ${now.getDate()}일`,
+    weekday: WEEKDAY_KO[now.getDay()],
+  };
 }
 
 // images/와이어프레임/3_홈.jpg
@@ -45,6 +49,8 @@ export default function HomePage() {
     }
   }
 
+  const { monthDay, weekday } = todayDisplay();
+
   const summaryCards = [
     { label: "전체 음식", value: totalCount },
     { label: "임박 음식", value: weekStats?.upcoming_count ?? 0, accent: true },
@@ -55,11 +61,22 @@ export default function HomePage() {
   return (
     <TabScreen>
       <section className="home-hero">
-        <p className="home-hero__greeting">
-          오늘도 냉장고를 구조해볼까요?
-          <br />({greetingDate()})<br />
-          냉장고 속 음식이 우리를 기다리고 있어요
-        </p>
+        <div className="home-hero__intro">
+          <span className="home-date-chip">
+            <span className="home-date-chip__icon" aria-hidden="true">📅</span>
+            {monthDay} <span className="home-date-chip__weekday">({weekday})</span>
+          </span>
+          <h1 className="home-hero__heading">
+            오늘도 냉장고를
+            <br />
+            <span className="home-hero__heading-accent">구조</span>해볼까요?
+          </h1>
+          <p className="home-hero__tagline">
+            냉장고 속 음식이
+            <br />
+            우리를 기다리고 있어요
+          </p>
+        </div>
         <div className="home-hero__mascot-wrap">
           <div className="home-hero__bubble">오늘도 화이팅!</div>
           <img className="home-hero__mascot" src={mascotMain} alt="냉장고 마스코트" />

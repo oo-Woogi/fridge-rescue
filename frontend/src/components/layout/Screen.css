@@ -6,3 +6,9 @@
   flex-direction: column;
   gap: var(--space-5);
 }
+
+/* 하단 탭바가 fixed로 화면 위에 떠 있는 화면(TabScreen/BackWithTabsScreen)은
+   본문 마지막 콘텐츠가 탭바에 가리지 않도록 여백을 추가로 확보한다. */
+.screen__content--with-nav {
+  padding-bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + var(--space-4));
+}

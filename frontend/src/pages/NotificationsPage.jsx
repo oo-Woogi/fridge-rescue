@@ -1,24 +1,19 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getNotificationSettings, listNotifications, updateNotificationSettings } from "../api/notifications";
+import { listNotifications } from "../api/notifications";
 import mascotNotice from "../assets/character/notice.png";
 import Badge from "../components/Badge";
 import { BackWithTabsScreen } from "../components/layout/Screen";
-import Switch from "../components/Switch";
 import { CATEGORY_EMOJI, NOTIFICATION_FILTERS } from "../config/constants";
 import "./NotificationsPage.css";
 
 // images/와이어프레임/9_알림.jpg
+// "알림 기준 설정"은 별도 화면(NotificationSettingsPage, 설정 탭 전용 진입)으로 분리되어 이 화면에는 없음.
 export default function NotificationsPage() {
   const navigate = useNavigate();
   const [q, setQ] = useState("");
   const [filter, setFilter] = useState("all");
   const [data, setData] = useState({ today_expiring: [], within_3_days: [], expired: [] });
-  const [settings, setSettings] = useState(null);
-
-  useEffect(() => {
-    getNotificationSettings().then(setSettings);
-  }, []);
 
   useEffect(() => {
     const timer = setTimeout(load, 200);
@@ -29,12 +24,6 @@ export default function NotificationsPage() {
   async function load() {
     const res = await listNotifications({ q: q || undefined, filter });
     setData(res);
-  }
-
-  async function toggleSetting(key) {
-    const next = { ...settings, [key]: !settings[key] };
-    setSettings(next);
-    await updateNotificationSettings({ [key]: next[key] });
   }
 
   function renderGroup(title, dotClass, list) {
@@ -99,24 +88,6 @@ export default function NotificationsPage() {
       {renderGroup("오늘 만료", "danger", data.today_expiring)}
       {renderGroup("3일 이내 임박", "warning", data.within_3_days)}
       {renderGroup("이미 지난 음식", "expired", data.expired)}
-
-      {settings && (
-        <section className="noti-settings">
-          <h2 className="noti-settings__title">알림 기준 설정</h2>
-          <div className="noti-settings__row">
-            <span>
-              <strong>D-1 알림</strong> 전일 오전 알림 받기
-            </span>
-            <Switch checked={settings.d1_enabled} onChange={() => toggleSetting("d1_enabled")} />
-          </div>
-          <div className="noti-settings__row">
-            <span>
-              <strong>D-3 알림</strong> 3일 전 미리 알림 받기
-            </span>
-            <Switch checked={settings.d3_enabled} onChange={() => toggleSetting("d3_enabled")} />
-          </div>
-        </section>
-      )}
     </BackWithTabsScreen>
   );
 }

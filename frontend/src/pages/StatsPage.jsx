@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { fetchStats } from "../api/stats";
 import mascotData from "../assets/character/data.png";
+import iconRescued from "../assets/ui/pool/2.png";
+import iconDiscarded from "../assets/ui/pool/3.png";
+import iconRescueRate from "../assets/ui/pool/4.png";
+import iconUpcoming from "../assets/ui/pool/6.png";
 import DonutChart from "../components/DonutChart";
 import { TabScreen } from "../components/layout/Screen";
 import { CATEGORY_CHART_COLOR, STATUS_RATIO_COLOR } from "../config/chartColors";
@@ -30,10 +34,10 @@ export default function StatsPage() {
 
   const cards = stats
     ? [
-        { label: "구조한 음식 수", value: stats.rescued_count, delta: stats.rescued_delta, icon: "🥗", tone: "success" },
-        { label: "폐기한 음식 수", value: stats.discarded_count, delta: stats.discarded_delta, icon: "🗑", tone: "danger" },
-        { label: "구조율", value: `${stats.rescue_rate}%`, delta: stats.rescue_rate_delta, icon: "🥧", tone: "warning", isRate: true },
-        { label: "임박 음식 수", value: stats.upcoming_count, delta: stats.upcoming_delta, icon: "🔔", tone: "info" },
+        { label: "구조한 음식 수", value: stats.rescued_count, delta: stats.rescued_delta, icon: iconRescued, tone: "success" },
+        { label: "폐기한 음식 수", value: stats.discarded_count, delta: stats.discarded_delta, icon: iconDiscarded, tone: "danger" },
+        { label: "구조율", value: `${stats.rescue_rate}%`, delta: stats.rescue_rate_delta, icon: iconRescueRate, tone: "warning", isRate: true },
+        { label: "임박 음식 수", value: stats.upcoming_count, delta: stats.upcoming_delta, icon: iconUpcoming, tone: "info" },
       ]
     : [];
 
@@ -77,7 +81,7 @@ export default function StatsPage() {
           <div className="stats-card-grid">
             {cards.map((card) => (
               <div className={`stats-card stats-card--${card.tone}`} key={card.label}>
-                <span className="stats-card__icon">{card.icon}</span>
+                <img className="stats-card__icon" src={card.icon} alt="" />
                 <span className="stats-card__label">{card.label}</span>
                 <span className="stats-card__value">{card.value}{!card.isRate && "개"}</span>
                 <span className={"stats-card__delta" + (card.delta < 0 ? " stats-card__delta--down" : "")}>
