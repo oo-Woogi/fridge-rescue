@@ -1,0 +1,43 @@
+@import "./styles/tokens.css";
+@import "./styles/forms.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #d8d3c2; /* 데스크톱 등 393px보다 넓은 화면에서 보이는 바깥 여백 색 */
+  color: var(--color-text-primary);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+/* 스크롤바를 좁게: 목업이 모바일 기준이라 데스크톱에서도 폭 차이가 최소화되도록 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}

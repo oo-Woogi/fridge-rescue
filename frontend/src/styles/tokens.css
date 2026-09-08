@@ -1,0 +1,74 @@
+/*
+ * 디자인 토큰 (색상/간격/타이포/반경)
+ * CLAUDE.md 편집 가능성 요구사항: 색상·크기·간격 값은 이 파일 하나만 고치면
+ * 앱 전체에 반영되도록 CSS 변수로 분리한다. 값의 출처는 images/와이어프레임 목업.
+ */
+:root {
+  /* 색상 */
+  --color-bg: #fcf6e9;
+  --color-surface: #ffffff;
+  --color-surface-alt: #eeebdd;
+  --color-input-bg: #eeebdb;
+  --color-border: #e6e0cd;
+
+  --color-primary: #2f9c6e;
+  --color-primary-dark: #1f6b4c;
+  --color-primary-light: #cdebdd;
+
+  --color-accent: #f28b5c;
+  --color-accent-dark: #e06f3d;
+
+  --color-danger: #e2543f;
+  --color-danger-light: #fbe3df;
+
+  --color-warning: #f0a93a;
+  --color-warning-light: #fdedd2;
+
+  --color-text-primary: #22281f;
+  --color-text-secondary: #8b8a7a;
+  --color-text-inverse: #ffffff;
+  --color-text-placeholder: #a7a494;
+
+  --color-badge-danger-bg: #f8d9d2;
+  --color-badge-danger-text: #d5482f;
+  --color-badge-warning-bg: #fbe9c9;
+  --color-badge-warning-text: #b97a12;
+  --color-badge-success-bg: #d9efe1;
+  --color-badge-success-text: #22854f;
+  --color-badge-expired-bg: #eee4de;
+  --color-badge-expired-text: #7a6f63;
+
+  /* 타이포 */
+  --font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 22px;
+  --font-size-xxl: 28px;
+
+  /* 간격 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+
+  /* 반경/그림자 */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --shadow-card: 0 8px 24px rgba(40, 40, 20, 0.08);
+  --shadow-button: 0 10px 20px rgba(242, 139, 92, 0.35);
+
+  /* 뷰포트 (CLAUDE.md 기준: 아이폰 14 Pro / 15, 393x852 CSS px) */
+  --viewport-width: 393px;
+
+  /* 하단 탭바 */
+  --bottom-nav-height: 64px;
+  --header-height: 56px;
+}

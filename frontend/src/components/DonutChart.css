@@ -1,0 +1,30 @@
+.donut {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.donut__hole {
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.donut__value {
+  font-size: var(--font-size-lg);
+  font-weight: 800;
+}
+
+.donut__label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}

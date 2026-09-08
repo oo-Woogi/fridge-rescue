@@ -1,0 +1,19 @@
+.mobile-frame {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.mobile-frame__screen {
+  position: relative;
+  width: 100%;
+  max-width: var(--viewport-width);
+  min-height: 100vh;
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}

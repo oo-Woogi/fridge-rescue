@@ -1,0 +1,18 @@
+# Python / Django
+backend/.venv/
+backend/**/__pycache__/
+backend/**/*.pyc
+backend/.env
+backend/config/firebase-service-account.json
+backend/staticfiles/
+backend/media/
+*.sqlite3
+
+# Node / React
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# OS / editor
+.DS_Store
+Thumbs.db

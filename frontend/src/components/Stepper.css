@@ -1,0 +1,22 @@
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.stepper__btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.stepper__value {
+  min-width: 24px;
+  text-align: center;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}

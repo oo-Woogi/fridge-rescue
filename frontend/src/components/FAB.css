@@ -1,0 +1,14 @@
+.fab {
+  position: sticky;
+  bottom: calc(var(--space-5) + env(safe-area-inset-bottom));
+  left: calc(100% - 72px);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  font-size: 28px;
+  box-shadow: var(--shadow-button);
+  z-index: 15;
+}

@@ -1,0 +1,14 @@
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--bottom-nav-height) + var(--space-5) + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  background: rgba(34, 40, 31, 0.92);
+  color: var(--color-text-inverse);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-sm);
+  max-width: calc(var(--viewport-width) - var(--space-8));
+  text-align: center;
+  z-index: 200;
+}
