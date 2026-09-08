@@ -10,7 +10,7 @@ export const logout = () =>
   api.post("/auth/logout/");
 
 export const fetchMe = () =>
-  api.get("/users/me");
+  api.get("/users/me/");
 
 export const updateMe = (payload) =>
-  api.patch("/users/me", payload);
+  api.patch("/users/me/", payload);
