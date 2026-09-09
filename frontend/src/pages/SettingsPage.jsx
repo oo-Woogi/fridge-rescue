@@ -83,7 +83,7 @@ export default function SettingsPage() {
         <h2 className="settings-group__title">데이터 관리</h2>
         <div className="settings-menu">
           <MenuRow label="샘플 데이터 추가" onClick={handleAddSampleData} />
-          <MenuRow label="전체 데이터 삭제" danger onClick={() => setConfirmDeleteAll(true)} />
+          <MenuRow label="냉장고 비우기" danger onClick={() => setConfirmDeleteAll(true)} />
         </div>
       </section>
 
@@ -106,9 +106,9 @@ export default function SettingsPage() {
 
       <ConfirmModal
         open={confirmDeleteAll}
-        title="전체 데이터를 삭제할까요?"
+        title="냉장고를 비울까요?"
         description="냉장고에 등록된 모든 음식 데이터가 삭제되며, 삭제 후에는 되돌릴 수 없어요."
-        confirmLabel="삭제하기"
+        confirmLabel="비우기"
         onCancel={() => setConfirmDeleteAll(false)}
         onConfirm={handleDeleteAll}
       />
